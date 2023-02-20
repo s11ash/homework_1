@@ -1,34 +1,44 @@
-const student = "Ким Вадим Максимович";
-let test = [3, 3, 0, 2];                                                           
-
-function getScoreOfMatch (score) {
-    const realWhoWinMatch = score[0] > score[1] ? 'TeamA' : 'TeamB';                
-    const supposedWhoWinMatch = score[2] > score[3] ? 'TeamA' : 'TeamB';            
-    const getGuessResult = realWhoWinMatch === supposedWhoWinMatch ? true : false;  
-    if (score[4] !== undefined) {
-        return 'Ошибка! Вы добавили лишнее.'
-    } else if (score[0] === undefined){
-        return 'Ошибка! Вы оставили поле пустым.'
-    } else if (score[0] === score[1] && score[2] === score[3]) {                        
-        return 'Счёт был угадан верно!'
-    } else if (getGuessResult === true) {                                           
-        return 'Счёт не угадали, но исход угадали'
-    } else {                                                                        
-        return 'Ни счёта, ни исхода не угадали'
-    }
-};
-
-document.querySelector('#buttonData').addEventListener('click', () => {             
-    let message = document.querySelector('#inputData').value;                       
-    let newMessage = Array.from(message.replaceAll(' ', '').replaceAll(',', ''));   
-    document.querySelector('#result').innerHTML = getScoreOfMatch(newMessage);      
-});
-
-document.querySelector('#inputData').addEventListener('input',                         
-    function(e){
-      this.value = this.value.replace(/[^\d, ]/g, '');
-});
+const student = "Ким Вадим Максимович"; // Очевидно, что здесь ваши личные Фамилия, Имя и Отчество
 
 document.getElementById("student").innerHTML = student;
-console.log(getScoreOfMatch(test));                   
 
+// Отсюда и ниже идет ваш код решения домашнего задания
+// ...
+// счет и тд. в консоле
+console.log('Тайнфун против МЖК Спартак')
+let x = 5 // Введите предполагаемый результат тайнфу
+console.log(x)
+let y = 3 ;// Введите предполагаемый результат мхк спартак
+console.log(y)
+let z =6 // Введите реальный результат тайфун
+console.log(z)
+let f =8 // Введите реальный результат мхк спартак
+console.log(f)
+let score_real = [z,f];
+let score_expected = [x ,y];
+if  
+(x>y) {score_real=0} // сравнение ответов
+else if 
+(x==y) {score_real=1}
+else
+ score_real=2
+if  
+(z>f) {score_expected=0} // сравнение ответов
+else if
+ (z==f) {score_expected=1}
+else 
+score_expected=2 
+if (y==f, x==z) 
+ {
+   console.log('Счёт и результат были угаданы верно');
+   }  
+else if (score_real==score_expected)
+{
+  console.log('Счёт не угадали')
+    console.log('результат был угадан верно');
+}
+else
+{ 
+  console.log('Счёт не угадали, результат не был угадан')
+  
+}
